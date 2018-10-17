@@ -1,0 +1,774 @@
+---
+title: "Análise de Dados com o Software R: Métodos Estatísticos, Computacionais e Econométricos"
+author: "João Pedro Albino"
+date: "16 de outubro de 2018"
+output:
+  ioslides_presentation: default
+---
+
+```{r setup, include=FALSE}
+library(vcd)
+knitr::opts_chunk$set(echo = TRUE, fig.align="center")
+```
+
+## Introdução {.build}
+
+- Vivemos uma era onde há um volume imenso de dados disponíveis.
+- A evolução das TICs produziram uma enorme quantidade de dados. 
+- O grande volume de dados tem originado novos conceitos, novas profissões _data scientists_ e novos termos _Big Data_ 
+
+## Ciência de Dados
+
+- Outro novo conceito
+- Estudo e geração de conhecimento a partir destes grandes volumes de dados. 
+- Incorpora técnicas e teorias das mais diversas áreas de conhecimento como computação, engenharia, matemática
+- Combina habilidades estatísticas e quantitativas avançadas com a capacidade de programação do mundo real. 
+- Linguagens de programação para desenvolvimento de projetos em ciência de dados
+- _Python_, _Scala_, _Julia_ elinguagem _R_.
+
+## Proof of Concept (PoC)
+
+- Novo conceito
+- Demonstração de técnica, método, teoria
+- Propósito: verificar se certos conceitos ou teorias têm potencial para aplicação no mundo real
+
+## Objetivo 
+
+- Apresentar e discutir alguns conceitos sobre ciência de dados e _prova de conceito_ (**POC**)
+- Base para projeto de análise de dados utilizando a _linguagem R_ 
+- Determinar a viabilidade prática do processo
+- Demonstrar método permite descobrir informações úteis, gerar conclusões e apoiar o ensino por meio da linguagem R
+- Utilizaremos o método proposto em Judd et. ali. (2017) 
+- Análise, inspeção, limpeza, transformação e modelagem de dados
+
+## Fundamentação Teórica 
+### Prova de Conceito (PoC)
+
+- Um modelo prático para provar um conceito teórico estabelecido por uma pesquisa ou artigo técnico
+- É uma demonstração, para verificar se determinados conceitos ou teorias têm potencial para aplicação no mundo real
+- Uma POC é um _protótipo_ projetado para determinar a viabilidade
+- Não representa os elementos produzidos (ou _entregas_). 
+- A prova de conceito é também conhecida como _prova de princípio_
+
+## O Ecosistema R
+
+- Linguagem e ambiente de desenvolvimento integrado voltado para cálculos estatísticos e gráficos.
+- criada por Ross Ihaka e Robert Gentleman no departamento de Estatística da universidade de Auckland, Nova Zelândia
+- Desenvolvida por meio de um esforço colaborativo de pessoas distribuídas em vários locais do mundo
+- O nome R provém em parte das iniciais dos nomes dos criadores (**R**oos e **R**obert) 
+- Jogo figurado com a **linguagem S**, desenvolvida no Bell Laboratories 
+- Código fonte do R está disponível sob a licença GNU/GPL 
+- Versões binárias pré-compiladas são fornecidas para Windows, Macintosh, e muitos sistemas operacionais Unix/Linux. 
+
+## O Ecosistema R
+- Altamente expansível com o uso dos **pacotes** - bibliotecas com sub-rotinas específicas ou voltadas para áreas específicas 
+- Um conjunto de pacotes básico ( _base_) está incluso em toda instalação do R
+- Outros pacotes estão disponíveis na rede de distribuição do R (CRAN - _Comprehensive R Archive Network_).
+- Tais características do R citadas anteriormente formam o conceito do **ecosistema R** (R Ecosystem). 
+- Bastante utilizada entre estatísticos e analistas para realizar análise sistemática de dados ou estatísticas.
+
+## Por que utilizar _R_ para Análise de Dados?
+
+- Linguagem usada para cálculos estatísticos, análise de dados e representação gráfica de dados 
+- Criado na década de 1990 o R foi projetado como uma plataforma estatística para limpeza, análise e representação de dados 
+- Tendências do Google mostram a crescente popularidade da Programação R
+
+## Por que utilizar _R_ para Análise de Dados?
+### 1. Academia
+
+- Muito popular na academia. 
+- Muitos pesquisadores e estudiosos usam o R para realizar seus ensaios em ciência de dados.
+
+## Por que utilizar _R_ para Análise de Dados?
+### 2. Data wrangling - Preparação dos Dados
+
+- **Data wrangling** _Data mugging_ _Data preparation_ – pode ser traduzido como **preparação de dados**
+- Processo de limpeza dos _ data sets_ (conjuntos de dados) para permitir o consumo e ouso posterior de análises. 
+- Muito importante e demorado em ciência de dados.  
+- São realizados processos de: visualização de dados; agregação de dados; treinamento de um modelo estatístico;
+
+## Por que utilizar _R_ para Análise de Dados?
+### 3. Visualização de dados
+
+- Rrepresentação visual dos dados em forma gráfica. 
+- Permite analisar dados em ângulos que não podem ser observados em dados não organizados ou tabulados
+
+## Por que utilizar _R_ para Análise de Dados?
+### 4. Especificidade
+
+- R é uma linguagem projetada especialmente para análise estatística e reconfiguração de dados. 
+- Bibliotecas se concentram em tornar a análise de dados mais fácil, acessível e detalhada 
+- Qualquer novo método estatístico é primeiro ativado por meio de bibliotecas no R. 
+
+## Por que utilizar _R_ para Análise de Dados?
+### 5. Aprendizado de máquina (Machine Learning
+
+- No processo de ciência de dados, pode ser preciso treinar o algoritmo 
+- Para trazer capacidades de automação e aprendizagem de máquina para realizar previsões
+- O R oferece muitas ferramentas aos desenvolvedores para treinar e avaliar um algoritmo e prever eventos futuros
+- Torna o aprendizado de máquina (um ramo da ciência de dados) muito mais fácil e acessível
+- A lista de pacotes R para aprendizado de máquina é extensa
+
+## Por que utilizar _R_ para Análise de Dados?
+#### 6. Disponibilidade
+
+- R é um software de códio aberto (**open source**). 
+- É utilizável em projetos de qualquer tamanho
+- Desenvolvimentos produzem códigos em uma rápida escala e a comunidade de desenvolvedores é bastante grande
+- Muitos novos desenvolvedores explorando o cenário de programação em R
+- Mais fácil e econômico recrutar ou terceirizar desenvolvedores de R.
+
+## Análise de Dados: Fundamentos da Metodologia
+
+- É o processo de inspeção, limpeza, transformação e modelagem de dados 
+- Objetivos: descobrir informações úteis, gerar conclusões e apoiar a tomada de decisões
+- Possui tem múltiplas facetas e abordagens
+- Abrange diversas técnicas sob vários nomes
+- É usada em diferentes domínios tais como negócios, ciências e ciências sociais.
+- Pode ser dividida em estatística descritiva, análise exploratória de dados (EDA) e análise confirmatória de dados (CDA)
+
+## Análise de Dados: Fundamentos da Metodologia
+
+- EDA se concentra na descoberta de novos recursos nos dados
+- CDA se concentra na confirmação ou falsificação de hipóteses existentes. 
+- Análise preditiva se concentra na aplicação de modelos estatísticos para previsão ou classificação preditiva
+- Análíse de texto aplica técnicas estatísticas, lingüísticas e estruturais para extrair e classificar informações de fontes textuais
+
+## O processo de Análise de Dados
+
+- busca dividir em componentes distintos e interdepenentes para se realizar um exame individual
+- Obter dados brutos e convertê-los em informações úteis para a tomada de decisão pelos usuários
+- Dados são coletados e analisados para responder perguntas, testar hipóteses ou refutar teorias
+- Existem várias fases no processo de análise de dados 
+
+## Fases de Análise de Dados
+### Requisitos de dados
+
+- Dados são utilizados como entradas para a análise, 
+- O tipo geral de entidade sobre o qual os dados serão coletados é referido como uma unidade experimental 
+- Variáveis específicas relativas a uma população podem ser especificadas e obtidas
+- Os dados podem ser _numéricos_ ou _categóricos_
+
+### Coleta de dados
+
+- Dados são coletados de várias fontes. 
+- Coletados de sensores: câmeras de tráfego, satélites, dispositivos de gravação
+- Por meio de entrevistas, downloads de fontes on-line ou leitura de documentação.
+
+## Fases de Análise de Dados
+### Processamento de dados
+
+- Dados inicialmente obtidos devem ser processados ou organizados para análise.
+- Esta etapa pode envolver a inserção de dados em linhas e colunas em um formato de tabela
+
+### Limpeza de dados
+
+- Os dados podem estar incompletos, conter duplicatas ou conter erros
+- A necessidade de limpeza surge por problemas na forma como os dados foram inseridos e armazenados 
+- Limpeza de dados é o processo de prevenir e corrigir  erros
+- Tais problemas nos dados podem ser identificados através de várias técnicas analíticas
+
+## Análise exploratória de dados (AED)
+
+- Depois que os dados estão limpos, podem ser _analisados_. 
+- **Análise exploratória de dados**: técnicas para começar a entender as mensagens contidas nos dados
+- A _visualização de dados_ também pode ser usada para examinar os dados em formato gráfico, obtendo informações adicionais 
+
+## Modelagem e Algoritmos
+
+- Fórmulas matemáticas ou modelos chamados _algoritmos_ aplicados nos dados para identificar relações entre as variáveis
+- Modelos podem ser desenvolvidos para avaliar uma variável específica nos dados com base em outra(s) variável(is)
+- **Estatísticas inferenciais** possuem técnicas para medir as relações entre variáveis específicas. 
+
+## Produto de dados
+
+- Aplicativo computacional que recebe dados de entrada e gera saídas, realimentando-os de volta ao ambiente. 
+- Pode ser baseado em um modelo ou algoritmo
+- Um exemplo é um aplicativo que analisa dados sobre o histórico de compras do cliente e recomenda outras compras
+
+## Comunicação
+
+- Depois da análise, podem ser elaborados relatórios buscando dar suporte aos seus requisitos
+- Usuários podem obter feedback, o que resulta em análises adicionais
+- Grande parte do ciclo analítico é iterativo
+- O analista pode considerar técnicas de visualização de dados para comunicar de forma clara e eficiente a mensagem ao público-alvo
+- A visualização de dados usa exibições de informações (como tabelas e gráficos) para expressarr as principais mensagens contidas nos dados 
+- Tabelas são úteis para pesquisar números específicos, enquanto gráficos ajudam a explicar as mensagens contidas nos dados 
+
+## Processo de Ciência de Dados
+
+![](data-science-process.png)
+
+## Análise Exploratória dos Dados
+### Leitura e carga dos dados
+
+```{r lendo-os-dados, echo=TRUE}
+endereco <- "http://s3.amazonaws.com/ihbs-html/dados/ODB2013originalcorrigido.csv" ## especifica a localização do arquivo
+df <- read.csv2(endereco, fileEncoding = "latin1") ## "carga" da tabela em formato .csv para o R
+dim(df)  ## mostrará o número de linhas (casos) e colunas (variáveis) já em formato de data.frame em R
+df[1:3, 1:3]  ## mostra linhas 1 a 3 e as colunas de 1 a 3 de "df""
+```
+
+## Análise Exploratória dos Dados
+### Preparação dos Dados 
+
+``` {r, limpesa-dos-dados_1, echo = TRUE}
+names(df)
+```
+
+## Realizando a Análise Exploratória dos Dados
+### Preparação dos Dados 
+
+- Os dados inicialmente carregados devem ser processados ou organizados antes da realização da análise
+- Os nomes longos das variáveis serão modificados para atributos mais compactos afim de facilitar sua manipulação
+- Antes de fazer a alteração, por garantia, armazena-se os nomes das variáveis originais num vetor:
+``` {r, limpesa-dos-dados_2, echo = TRUE}
+nomesorig <- names(df)  # preservando os nomes originais das variáveis
+```
+
+## Realizando a Análise Exploratória dos Dados
+### Preparação dos Dados 
+- Alteração dos nomes
+``` {r, limpesa-dos-dados, echo = TRUE}
+novonome <- c("dh", "num", "loc", "sex", "dan", "alt", "pes", "cal", "cir", 
+    "mao", "pub", "fac", "alu", "sta", "uni", "pg1", "pg2", "hco", "hmq", "est", 
+    "cid", "cso", "ipa", "in1", "in2", "in3", "in4", "ol1", "ol2", "rel1", "rel2", 
+    "mu1", "mu2", "ho1", "ho2", "fum", "alc", "ani", "tim", "sat", "odi", "odf", 
+    "odl", "oda", "odt", "cus", "con", "out", "nlv", "liv")
+
+names(df) <- novonome ## atribuindo novos nomes de variáveis
+names(df)  ## exibindo os novos nomes
+```
+
+## Análise Exploratória dos Dados
+### Preparação dos Dados 
+- Ver os valores da variável qualitativa sexo (no caso _df$sex_):
+``` {r, mostra-dos-dados, echo = TRUE}
+df$sex
+```
+
+## Análise Exploratória dos Dados
+### Preparação dos Dados 
+
+- Para alterar os nomes ( _levels_) dessas categorias, que indicam o sexo do aluno ( _Masculino e Feminino_), para **“f”** e **“m”**
+``` {r, troca-níveis, echo= TRUE}
+levels(df$sex)  ## mostra os níveis ou categorias da variável sex no data.frame df
+levels(df$sex) <- c("f", "m")  # troca por identificadores mais sintéticos
+levels(df$sex)  ## exibe os novos nomes, já alterados na variável
+```
+
+- O R assume uma ordem para os níveis, a qual é a apresentada quando o _comando levels_ é utilizado, como foi feito.
+- Para mudar essa ordem, que é algo que pode ser interessante em algumas análises, podemos usar (nesse caso):
+``` {r, reordenacao, echo=TRUE}
+df$sex <- factor(df$sex, levels(df$sex)[c(2, 1)])  # reordenação de níveis
+levels(df$sex)  # observar a reordenação exibida
+```
+
+## Análise Exploratória dos Dados
+### Preparação dos Dados 
+
+- O vetor **c(2,1)** mostra as novas posições para os níveis originais. O nível 1 vai para 2 e o nível 2 vai para 1. 
+- Pode-se proceder de forma similar se existirem mais níveis. 
+- Para retornar à forma anterior, usamos novamente o trecho de código:
+``` {r, voltar-original, echo=TRUE}
+df$sex <- factor(df$sex, levels(df$sex)[c(2, 1)])
+levels(df$sex)  # note o retorno à ordem anterior
+```
+
+## Realizando a Análise Exploratória dos Dados
+### Preparação dos Dados
+- No próximo trecho de código, serão modificados os nomes de níveis de variáveis e redefinidos os níveis:
+
+``` {r, data_wrangling, echo=TRUE}
+levels(df$loc)
+levels(df$loc) <- c("at", "cr", "po")
+
+levels(df$mao)
+levels(df$mao) <- c("c", "d")
+
+levels(df$fac)
+levels(df$fac) <- c("adm", "eagri", "eagro", "eamb", "eali", "eauto", "emambi", "ee", "emec", "emeca", "eprod", "equi") 
+
+## Criando novas variáveis (tempg e cures) para facilitar a análise dos cursos de pg
+levels(df$pg1)
+df$tempg <- df$pg1
+levels(df$tempg) <- c("esp", "esp", "cur", "cur", "cur", "nc", "msc")
+df$cures <- df$pg1
+levels(df$cures) <- c("n", "s", "s", "s", "n", "n", "s")
+
+# Criando variável df$itot com os pontos totais no inglês
+df$itot <- df$in1 + df$in2 + df$in3 + df$in4
+
+levels(df$ani)
+levels(df$ani) <- c("n", "s")
+levels(df$tim)
+levels(df$tim) <- c("am", "co", "cr", "vi", "fl", "go", "gr", "ni", "ot","pa", "sa", "sp")
+levels(df$odf)
+levels(df$odf) <- c("j", "o")
+levels(df$oda)
+levels(df$oda) <- c("agop", "agpc", "ambi", "inpc", "mana", "manai", "mani","parf")
+```
+
+## Análise Descritiva
+###Filtros, seleções e estatísticas (medidas-resumo) incondicionais e condicionais
+
+Um recurso forte da linguagem do R é a facilidade de se observar, modificar e filtrar observações de variáveis a partir de critérios lógicos definidos, assim como possibilitar a obtenção de estatísticas condicionais. Alguns exemplos serão realizados a seguir para ilustrar as possibilidades
+
+## Análise Descritiva
+### Observação e modificação
+``` {r, observar-modificar, echo=TRUE}
+## Acesso a observação 3 da variável df$alt
+df$alt[3]
+## Acesso às observações 2, 3 e 7
+df$alt[c(2, 3, 7)]
+## Modificando valores de vetores
+alt2 <- df$alt[c(2, 3, 7)]  ## criando uma réplica de df$alt
+alt2[c(2, 3, 7)] <- c(1.5, 1.72, 1.8)  ## alterando as observações 2, 3 e 7
+prop.table(table(df$sex))
+```
+
+## Análise Descritiva
+### Filtros
+- Obter os valores de altura para as observações associadas a mulheres
+``` {r, filtragem, echo=TRUE} 
+## Observações de altura dos alunos do sexo feminino
+df$alt[df$sex == "f"]
+```
+
+-A avaliação de alunos$sex==“f” resultará em:
+``` {r, observacao, echo=TRUE}
+## Observações de altura dos alunos do sexo feminino
+df$sex == "f"
+```
+
+## Análise Descritiva
+### Filtros
+- Somente os valores de df$alt correspondentes às posições que têm o resultado TRUE foram selecionadas no comando anterior.
+- Para obtermos as observações de altura correspondentes às mulheres (f) trabalhando em Alto Taquari (at):
+``` {r, cruzanmento1, echo=TRUE}
+## Observações de altura dos alunos do sexo feminino
+df$alt[df$sex == "f" & df$loc == "at"]  # (& corresponde ao **e** lógico)
+```
+
+## Análise Descritiva
+### Filtros
+- Para observações da altura correspondentes às mulheres (f) ou pessoas com peso igual ou acima de 70 kg:
+``` {r, cruamento2, echo=TRUE}
+## Observações de altura dos alunos do sexo feminino
+df$alt[df$sex == "f" | df$pes >= 70]  # (| corresponde ao **ou** lógico)
+```
+
+## Análise Descritiva,
+_ Em R, alguns operadores lógicos mais usuais são:
+1.	== (igual exatamente)
+2. is.equal() (igual aproximadamente)
+3. > (maior), < (menor)
+4. 	>= (maior ou igual), <= (menor ou igual)
+5.	<> (diferente)
+6. & (e lógico), | (ou lógico)
+7. parêntesis podem ser utilizados para deixar clara a prioridade das operações
+
+## Análise Descritiva
+### Estatísticas elementares condicionais e incondicionais (variáveis quantitativas)
+
+- Pode-se trabalhar com os resultados da filtragem, que também será um vetor. 
+- O _code chunk_ a seguir mostra o uso dos comandos 
+- mean (média), sd (desvio padrão), median (mediana), max (máximo) e min (mínimo), 
+- which.max (qual o índice do máximo valor) e 
+- which.min (qual é o índice do menor valor) 
+- a partir da utilização de filtros (em situações que denominamos de estatísticas condicionais)
+
+## Análise Descritiva
+### Estatísticas elementares condicionais e incondicionais (variáveis quantitativas)
+``` {r, estat_cond_incond, echo=TRUE}
+## estatísticas elementares incondicionais
+mean(df$alt)  # média
+median(df$alt)  # mediana
+sd(df$alt)  # desvio padrão
+max(df$alt)  # máximo
+min(df$alt)  # mínimo
+
+## estatísticas elementares condicionais
+mean(df$alt[df$sex == "f"])  # média da altura das mulheres
+mean(df$alt[df$sex == "m"])  # média da altura dos homens
+
+# algumas estatísticas do núm do sapato para pessoas com altura maior que 1,6 trabalhando em Alto Taquari
+median(df$cal[df$alt > 1.6 & df$loc == "at"])
+sd(df$cal[df$alt > 1.6 & df$loc == "at"])
+max(df$cal[df$alt > 1.6 & df$loc == "at"])
+min(df$cal[df$alt > 1.6 & df$loc == "at"])
+```
+
+## Análise Descritiva
+- Para encontrar-se a altura da pessoa com maior peso utiliza-se o seguinte trecho de código:
+``` {r, altura_e_peso, echo=TRUE}
+df$alt[which.max(df$pes)]
+```
+
+## Análise Descritiva
+- Deve-se explorar os dados do data.frame _df_ para se familiarizar com essas e outras opções.
+- O _tapply_ com o cômputo da média de altura por sexo e da média de altura por sexo e local de trabalho.
+``` {r, uso_tapply, echo=TRUE}
+tapply(df$alt, df$sex, mean)
+
+tapply(df$alt, list(df$sex, df$loc), mean)
+``` 
+
+## Análise Descritiva
+### Análise básica de frequências - variáveis qualitativas
+
+``` {r, frequencias_1, echo=TRUE}
+n <- length(df$sex)  ## definindo o número de observações
+sum(df$sex == "f")  ## frequência absoluta de mulheres (possibilidade 1)
+length(df$sex[df$sex == "f"])  ## frequência absoluta de mulheres (possibilidade 1)
+sum(df$sex == "f")/n  ## frequência relativa de mulheres
+```
+
+## Análise Descritiva
+### Análise básica de frequências - variáveis qualitativas
+
+``` {r, frequencias_2, echo=TRUE}
+length(df$sex[df$sex == "m"])  ## frequência absoluta de homens
+length(df$sex[df$sex == "m"])/n  ## frequência relativa de mulheres
+```
+
+## Análise Descritiva
+### Análise básica de frequências - variáveis qualitativas
+- Há muitas formas de analise de frequências no R
+- Uma forma elementar, mas prática, utiliza os comandos _table_ e _prop.table_
+``` {r, frequencias2, echo=TRUE}
+## Sexo dos df
+table(df$sex)
+```
+
+## Análise Descritiva
+### Análise básica de frequências - variáveis qualitativas
+``` {r, frequencias3, echo=TRUE}
+prop.table(table(df$sex))
+table(df$loc)
+prop.table(table(df$loc))
+```
+
+## Análise Descritiva
+- As frequências podem ser visualizadas graficamente
+- Usando gráficos de barras elementares, que se aplicam à descrição de qualquer vetor de dados ou tabelas
+
+## Análise Descritiva
+``` {r, graficos, echo=TRUE}
+ident <- c("Mulheres", "Homens")
+barplot(table(df$sex), names.arg = ident, col = c("pink", "lightblue"))
+```
+
+## Análise Descritiva
+- Pode-se definir cores em tonalidades de cinza, usando a função gray(x) 
+- **x** é um valor entre 0 e 1 (0 é o preto e 1 é o branco).
+
+## Análise Descritiva
+``` {r, graficos2, echo=TRUE}
+ident <- c("Mulheres", "Homens")
+barplot(prop.table(table(df$sex)) * 100, names.arg = ident, col = c(gray(0.8), gray(0.5)))
+title(main = "Frequência relativa - sexo", xlab = "sexo", ylab = "%")
+```
+
+## Análise Descritiva
+É comum também a apresentação de dados de frequências em gráficos do tipo _pizza_
+``` {r, graficos3, echo=TRUE}
+ident <- c("Mulheres", "Homens")
+pie(prop.table(table(df$sex)) * 100, label = ident, col = c("lightblue2","lightblue3")) 
+title(main = "Frequência relativa - sexo")
+```
+
+## Análise Descritiva
+- Também pode-ses utilizar filtros, para obter, por exemplo, as frequências conjuntas absolutas (e dai as relativas)
+``` {r, com_filtros, echo=TRUE}
+sum(df$sex == "f" & df$loc == "at")
+sum(df$sex == "m" & df$loc == "at")
+sum(df$sex == "f" & df$loc == "cr")
+sum(df$sex == "m" & df$loc == "cr")
+sum(df$sex == "f" & df$loc == "po")
+sum(df$sex == "m" & df$loc == "po")
+```
+
+## Análise Descritiva
+- Ao dividir-se os valores obtidos por _n<-length(df$sex)_ pode-se obter as frequências relativas conjuntas:
+``` {r,freq_relativas_conjuntas, echo=TRUE}
+table(df$sex, df$loc)
+prop.table(table(df$sex, df$loc))
+```
+
+## Análise Descritiva
+- Pode-se alterar o número de digitos significativos apresentado (para 3 por exemplo), usando a opção:
+``` {r, digitos, echo=TRUE}
+oldoptions <- options()  # preservando as opções existentes
+options(digits = 3)
+```
+
+## Análise Descritiva
+- Não há restrição com relação ao número de variáveis em tabelas de frequência conjunta. 
+- O trecho de código mostra as frequências conjuntas de todas as possibilidades envolvendo 3 variáveis:
+``` {r, tres_variaveis, echo=TRUE }
+prop.table(table(df$odf, df$loc, df$sex))
+```
+
+## Análise Descritiva
+- As frequências condicionais podem se obtidas através de _prop.table_. 
+- Por exemplo, a frequência de homens (m) condicional ao local de trabalho ser Alto Taquari (at):
+``` {r, freq_cond3, echo=TRUE}
+prop.table(table(df$sex, df$loc), 2)
+```
+
+## Análise Descritiva
+- Situações envolvendo 3 variáveis (condicional em sexo):
+``` {r, tres_variaveis2, echo=TRUE}
+prop.table(table(df$odf, df$loc, df$sex), 3)
+```
+
+## Análise Descritiva
+- Há muitos recursos importantes especializados na análise e visualização gráfica de frequências conjuntas e condicionais
+
+## Análise Descritiva
+``` {r, graficos4, echo=TRUE}
+## gráfico de barras justapostas (segunda variável no eixo x) - Frequência
+## conjunta absoluta
+barplot(table(df$sex, df$loc), beside = TRUE, legend.text = TRUE, args.legend = list(x = 8.8,                                                                                              y = 5, title = "sexo", horiz = TRUE, cex = 0.8))
+title("Frequências conjuntas absolutas\n sexo x localização", xlab = "localização", 
+      ylab = "df")
+```
+
+## Análise Descritiva
+``` {r, graficos5, echo=TRUE}
+## gráfico de barras empilhadas (segunda variável no eixo x) - Frequência
+## conjunta relativa
+barplot(prop.table(table(df$sex, df$loc)) * 100, legend.text = TRUE, 
+        xpd = TRUE, args.legend = list(x = "right", title = "sexo", horiz = FALSE, 
+                                       inset = -0.07, cex = 0.8))
+title("Frequências conjuntas relativas\n sexo x localização", xlab = "localização", 
+      ylab = "%")
+```
+
+## Análise Descritiva
+``` {r, grafico6, echo=TRUE}
+## Gráfico de frequência condicional (df$sex|df$loc)
+barplot(prop.table(table(df$sex, df$loc), 2) * 100, legend.text = TRUE, 
+        xpd = TRUE, ylim = c(0, 100), args.legend = list(x = "right", title = "sexo", 
+                                                         horiz = FALSE, inset = -0.07, cex = 0.8))
+title("Frequências condicionais relativas\n sexo | localização", xlab = "localização", 
+      ylab = "%")
+```
+
+## Análise Descritiva
+- Os próximos exemplos utilizam o gráfico tipo Mosaico do package **vcd**
+
+## Análise Descritiva
+``` {r, vcd1, echo=TRUE}
+## carregamento do package vcd (deve ser instalado antes)
+require(vcd)
+## gráfico tipo mosaico - frequências condicionais sexo | localização
+mosaic(sex ~ loc, data = df, highlighting_fill = c("pink", "lightblue"))
+```
+
+## Análise Descritiva
+- Gráfico tipo Mosaico do package **vcd**
+``` {r, vcd2, echo=TRUE}
+## gráfico tipo mosaico - frequências condicionais sexo | localização,
+## tipo de ingresso
+mosaic(sex ~ loc + odf, data = df, highlighting_fill = c("pink", "lightblue"))
+```
+
+## Análise Descritiva
+- Também do package vcd há o gráfico tipo doubledecker que é útil para apresentar dados de frequências condicionais. 
+- Da mesma forma que no caso anterior, as regiões são proporcionais ao número de pessoas em cada categoria.
+
+## Análise Descritiva
+``` {r, vcd3, echo=TRUE}
+## carregamento do package vcd (deve ser instalado antes)
+require(vcd)
+## gráfico tipo doubledecker, frequência condicional sexo | localização,
+## tipo de ingresso
+doubledecker(loc ~ sex + odf, data = df)
+```
+
+## Análise Descritiva
+- A visualização de variáveis contínuas através de gráficos pode considerar muitos conceitos diferentes. 
+- Dois deles são bem fundamentais: o _histograma_ e o _boxplot_ (diagrama de Tuckey) 
+- Tais gráficos erão ilustrados na descrição de variáveis quantitativas do levantamento. 
+- Para tanto examinaremos o índice de massa corporal dos alunos (que denominaremos imc). 
+- Caso seja definido, o argumento breaks tenta especificar o número de categorias que o histograma irá considerar.
+
+## Análise Descritiva
+``` {r, graficos8, echo=TRUE}
+df$imc <- df$pes/df$alt^2
+## histograma do peso dos df - básico
+hist(df$imc, breaks = 5)
+```
+
+## Análise Descritiva
+``` {r, graficos9, echo=TRUE}
+## a próxima implementação incorpora algumas opções específicas e deixa o
+## número de categorias para o R especificar
+hist(df$imc, xlab = "IMC", ylab = "densidade de frequência", main = "Histograma do IMC", 
+     col = "bisque", freq = FALSE)
+```
+
+## Análise Descritiva
+- Uma outra opção é o **boxplot**, que mostra o máximo, mínimo, a mediana e os quartis 25% e 75%. 
+- Pode ser um gráfico incondicional ou condicional.
+
+## Análise Descritiva
+``` {r, graficos10, echo=TRUE}
+boxplot(df$imc)
+```
+
+## Análise Descritiva
+
+``` {r, graficos11, echo=TRUE}
+boxplot(df$imc ~ df$sex, col = "bisque")
+```
+
+## Análise Descritiva
+- Em muitos casos, há mais de uma informação indicada por resposta (ex. religião, hobbies, livros). 
+- Como tratar essa situação?
+- Há várias formas. 
+- Uma delas, a mais simples é organizar a informação em uma lista que registra a ocorrência de cada caso.
+- Assim pode-se saber, pelo menos, o total de pessoas que informou uma dada possibilidade. 
+- Para fazermos essa conversão, usaremos uma _função_ que converte um vetor com as respostas separadas por um dado separador, em um vetor com as respostas já separadas. 
+
+## Análise Descritiva
+
+``` {r, define_funcao, echo=TRUE}
+abrestring <- function(mvec, sep) {
+  n <- length(mvec)
+  nvec <- list()
+  for (i in 1:n) {
+    nvec <- list(nvec, strsplit(as.character(mvec[i]), sep))
+  }
+  nvec <- unlist(nvec)
+  return(nvec)
+}
+``` 
+
+## Análise Descritiva
+- Usaremos a função para identificar as respostas associadas à informação de hobbies.
+``` {r, usa_funcao, echo=TRUE}
+relhobbies <- abrestring(df$ho1, ", ")
+table(relhobbies)
+```
+
+## Análise Descritiva
+- Para religião usaremos:
+``` {r, usa_funcao_religiao, echo=TRUE}
+totrelig <- as.factor(abrestring(df$rel1, ", "))
+levels(totrelig) <- c("at", "ca", "es", "ev", "ad", "ou", "pr")
+table(totrelig)
+```
+
+## Análise Descritiva
+- No caso dos títulos dos livros pode-se utilizar:
+``` {r, livros, echo=TRUE}
+livvec <- as.factor(abrestring(df$liv, ";"))
+levels(livvec)
+```
+
+## Análise Descritiva
+- Observa-se que há muitas correções a fazer (espaços, títulos mal-padronizados, letras com caixa diferente). 
+- A correção pode se processar pela substituição dos valores originais por valores padronizados
+
+``` {r, ajustes_1, echo=TRUE}
+levels(livvec)[c(1, 2, 4, 8, 34, 35)] <-
+  c("Cinquenta Tons de Cinza mais Escuro", 
+    "Diablo III", "A Cabana", "A Cabana", "Sobreviver, Crescer e Perpetuar", 
+     "Sobreviver, Crescer e Perpetuar")
+```
+
+## Análise Descritiva
+- Verificando se está tudo correto:
+``` {r, correcoes, echo=TRUE}
+levels(livvec)
+```
+
+## Análise Descritiva
+- Com a reestuturação, pode-se agora mostrar as frequências absolutas, já ordenadas em ordem decrescente:
+``` {r, ajustes_2, echo=TRUE}
+sort(table(livvec), decreasing = TRUE)
+```
+
+## Concluindo
+### Salvando o data.frame modificado em arquivo no seu computador
+
+- Salvar o _data.frame_ **limpo**, a fim de utilizá-lo em uma futuras análises
+- Deve-se gravá-lo em um arquivo externo ao R.
+- Neste exemplo, o arquivo a ser salvo terá o nome **ODB2018.csv** e será utilizado o comando **write.table**. 
+- O comando _write.table(x, file=...)_ grava o argumento **x** depois de convertê-lo em um _data frame_
+
+## Concluindo
+### Salvando o data.frame modificado em arquivo no seu computador
+``` {r, finalizando, echo=TRUE}
+diretorio <-
+"C:/OneDrive/Projetos 2018/Ciencia de Dados/Introducao a Ciencia de Dados/Projetos/Analise de Dados com o Software R/dados/ODB2018.csv"
+write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) # no ruindows...
+```
+
+## Concluindo
+### Salvando o data.frame modificado em arquivo no seu computador
+
+- Salvo no arquivo “ODB2018.csv”, com as opções corretas que definem um arquivo **csv** 
+- no formato BR desejado; 
+- **“;”** separando os valores, 
+- **“,”** separando decimais;
+- os nomes das variáveis já compactadas na primeira linha do arquivo; 
+- e sem nomes identificando linhas (por _default_, a opção _row.names=NA_).
+
+## Referências
+
+Becker, R.A, Chambers, J.M. e Wilks, A.R. (1988), The New S Language: A Programming Environment for Data Analysis and Graphics, Wadsworth & Brooks/Cole.
+
+Becker, R.A.e Chambers, J.M. (1984). S: An Interactive Environment for Data Analysis and Graphics. Wadsworth & Brooks/Cole.
+
+Behrens, John T. (1997), Principles and Procedures of Exploratory Data Analysis, Psychological Methods, Vol. 2, No. 2, pp.131-16.
+
+Cavique, Luís (2014),Big Data e Data Science, Boletim 51.11-14, Repositório Aberto, Universidade Aberta de Portugal.
+
+Hellerstein, Joseph (2008), Quantitative Data Cleaning for Large Databases, EECS Computer Science Division, UC Berkeley.
+
+## Referências
+
+Hornik, Kurt (2017), The R FAQ: Why is R named R?. [Online].  Disponível em:https://cran.r-project.org/doc/FAQ/R-FAQ.html#Why-is-R-named-R_003f, Acessado em: 09/10/2018.
+
+Ihaka,  Ross (1998), R: Past and Future History, Statistics Department, The University of Auckland, Auckland, New Zealand. [Online]. Disponível em:https://cran.r-project.org/doc/html/interface98-paper/paper.html, Acessado em: 09/10/2018.
+
+Janssen, Dale e Janssen, Cory (2018), Proof of Concept (POC), Blog Techopedia - The IT Education Site. [Online]. Disponível em:https://www.techopedia.com/definition/4066/proof-of-concept-poc. Acessado em: 15/10/2018.
+
+Judd, Charles, McCleland, Gary e Ryan, Carey S. (2017). Data Analysis: A Model Comparison Approach To Regression, ANOVA, and Beyond, Third Edition,  Harcourt.
+
+Koomey, Jonathan G. (2006), Best Practices for Understanding Quantitative Data, Research Paper, Visual Business Intelligence Newsletter. Disponível em:http://www.perceptualedge.com/articles/b-eye/quantitative_data.pdf. Acessado em: 09/10/2018.
+
+## Referências
+Microsoft Research (2012), Data Cleaning. [Online]. Disponível em:https://www.microsoft.com/en-us/research/project/data-cleaning/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fprojects%2Fdatacleaning%2F. Acessado em: 09/10/2018.
+
+Muenchen, Robert A. (2017), The Popularity of Data Science Software. [Online]. DIsponível em:http://r4stats.com/articles/popularity/. Acessado em: 09/10/2018.
+
+NewGenApps (2017), 6 Reasons: Why Choose R Programming for Data Science Projects? Blog Newgwnapps, Sep 18, 2017. [Online]. Disponível em:https://www.newgenapps.com/blog/6-reasons-why-choose-r-programming-for-data-science-projects. Acessado em: 15/10/2018.
+
+Olavsrud, Thor (2018), Ciência de dados: tudo sobre o método que transforma dados em valor, Computerworld. [Online]. Disponível em:https://computerworld.com.br/2018/07/02/ciencia-de-dados-tudo-sobre-o-metodo-que-transforma-dados-em-valor/. Acessado em: 13/10/2018.
+
+## Referências
+O'Neil, Cathy e Schutt, Rachel (2013), Doing Data Science: Straight Talk from the Frontline, O'Reilly Media.
+
+Pinheiro, José Maurício Santos (2010), Prova de Conceito (PoC) no Projeto de Redes de Computadores, Blog Desmonta & CIA. [Online]. DIsponível em:https://desmontacia.wordpress.com/2010/12/21/prova-de-conceito-poc-no-projeto-de-redes-de-computadores/. Acessado em: 15/10/2018.
+
+Plakidasa, Konstantinos, Schallb, Daniel e Zdun, Uwe (2017), Evolution of the R software ecosystem: Metrics, relationships, and their impact on qualities, Journal of Systems and Software, Vol. 132, pp. 119-146.
+
+Profap (2018), Data wrangling: por que o big data depende dessa metodologia? Blog Profap. [Online]. Disponível em:http://profap.com.br/data-wrangling-por-que-o-big-data-depende-dessa-metodologia/. Acessado em: 13/10/2018.
+
+Robinson, David (2017) The Impressive Growth of R, Stack Ovwerflow, Octobe, 10, 2017. [Online]. Disponível em:https://stackoverflow.blog/2017/10/10/impressive-growth-r/. Acessado em: 09/10/2018.
+
+## Referências
+Schutt, Rachel e O’Neil, Cathy (2014), Doing Data Science, O’Reilly Media.
+
+Silveira, Debora Pricila (2016), O que é Data Science?, Oficinadanet, 20/07/2016. [Online]. Disponível em:https://www.oficinadanet.com.br/post/16919-o-que-e-data-science. Acessado em: 13/10/2018.
+
+The SunTec India Blog, Clean Data in CRM: The Key to Generate Sales-Ready Leads and Boost Your Revenue Pool (2016). [Online]. Disponível em:https://www.suntecindia.com/blog/clean-data-in-crm-the-key-to-generate-sales-ready-leads-and-boost-your-revenue-pool/. Acessado em: 09/10/2018.
+
+Thieme, Nick (2018), R Generation, Significance Magazine, Royal Ststistics Society, N. 14, August 2018. pp. 14-19.
+
+Tukey, J. (1961) The Future of Data Analysis, Princeton  University. [Online]. Disponível em: https://projecteuclid.org/download/pdf_1/euclid.aoms/1177704711. Acessado em: 09/10/2018.
