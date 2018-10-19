@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.align="center")
 - Incorpora técnicas e teorias das mais diversas áreas de conhecimento como computação, engenharia, matemática
 - Combina habilidades estatísticas e quantitativas avançadas com a capacidade de programação do mundo real. 
 - Linguagens de programação para desenvolvimento de projetos em ciência de dados
-- _Python_, _Scala_, _Julia_ elinguagem _R_.
+  - _Python_, _Scala_, _Julia_ elinguagem _R_.
 
 ## Proof of Concept (PoC)
 
@@ -136,7 +136,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.align="center")
 
 ## O processo de Análise de Dados
 
-- busca dividir em componentes distintos e interdepenentes para se realizar um exame individual
+- Busca dividir em componentes distintos e interdepenentes para se realizar um exame individual
 - Obter dados brutos e convertê-los em informações úteis para a tomada de decisão pelos usuários
 - Dados são coletados e analisados para responder perguntas, testar hipóteses ou refutar teorias
 - Existem várias fases no processo de análise de dados 
@@ -359,7 +359,7 @@ df$alt[df$sex == "f" | df$pes >= 70]  # (| corresponde ao **ou** lógico)
 ```
 
 ## Análise Descritiva,
-_ Em R, alguns operadores lógicos mais usuais são:
+- Em R, alguns operadores lógicos mais usuais são:
 1.	== (igual exatamente)
 2. is.equal() (igual aproximadamente)
 3. > (maior), < (menor)
@@ -530,9 +530,9 @@ prop.table(table(df$odf, df$loc, df$sex), 3)
 ``` {r, graficos4, echo=TRUE}
 ## gráfico de barras justapostas (segunda variável no eixo x) - Frequência
 ## conjunta absoluta
-barplot(table(df$sex, df$loc), beside = TRUE, legend.text = TRUE, args.legend = list(x = 8.8,                                                                                              y = 5, title = "sexo", horiz = TRUE, cex = 0.8))
-title("Frequências conjuntas absolutas\n sexo x localização", xlab = "localização", 
-      ylab = "df")
+barplot(table(df$sex, df$loc), beside = TRUE, legend.text = TRUE, args.legend = list(x = 8.8,
+              y =5, title = "sexo", horiz = TRUE, cex = 0.8))
+title("Frequências conjuntas absolutas\n sexo x localização", xlab = "localização",ylab = "df")
 ```
 
 ## Análise Descritiva
@@ -703,9 +703,10 @@ sort(table(livvec), decreasing = TRUE)
 ## Concluindo
 ### Salvando o data.frame modificado em arquivo no seu computador
 ``` {r, finalizando, echo=TRUE}
-diretorio <-
-"C:/OneDrive/Projetos 2018/Ciencia de Dados/Introducao a Ciencia de Dados/Projetos/Analise de Dados com o Software R/dados/ODB2018.csv"
-write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) # no ruindows...
+#diretorio <-
+#"C:/OneDrive/Projetos 2018/Ciencia de Dados/Introducao a Ciencia de Dados/Projetos/Analise de Dados com o Software R/dados/ODB2018.csv" ## Em Windows
+diretorio = "~/Downloads/AED/dados/ODB2018.csv" ## Em MacOsX
+write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) # salvando...
 ```
 
 ## Concluindo

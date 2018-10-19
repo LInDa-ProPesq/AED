@@ -3,8 +3,8 @@ title: "Análise de Dados com o Software R: Métodos Estatísticos, Computaciona
 author: "João Pedro Albino"
 date: "13 de outubro de 2018"
 output:
-  pdf_document: default
   word_document: default
+  pdf_document: default
 version: 1.3
 ---
 
@@ -590,8 +590,9 @@ Para salvar o _data.frame_ **limpo**, a fim de utilizá-lo em uma futuras análi
 
 Neste exemplo, o arquivo a ser salvo terá o nome **ODB2018.csv** e será utilizado o comando **write.table**. O comando _write.table(x, file=...)_ grava o argumento **x** depois de convertê-lo em um _data frame_, se já não o for em uma matriz, para um arquivo ou conexão especificado em _file=..._.: 
 ``` {r, finalizando, echo=TRUE}
-diretorio <-"C:/OneDrive/Projetos 2018/Ciencia de Dados/Introducao a Ciencia de Dados/Projetos/Analise de Dados com o Software R/dados/ODB2018.csv"
-write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) # no ruindows...
+#diretorio <-"C:/OneDrive/Projetos 2018/Ciencia de Dados/Introducao a Ciencia de Dados/Projetos/Analise de Dados com o Software R/dados/ODB2018.csv" ## Em Windows
+diretorio = "~/Downloads/AED/dados/ODB2018.csv" ## Em MacOsX
+write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) # salvando...
 ```
 
 O data.frame alunos será salvo no arquivo “ODB2018.csv”, com as opções corretas que definem um arquivo **csv** no formato BR desejado; **“;”** separando os valores, **“,”** separando decimais; os nomes das variáveis já compactadas na primeira linha do arquivo; e sem nomes identificando linhas (por _default_, a opção _row.names=NA_).
