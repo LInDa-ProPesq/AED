@@ -1,7 +1,7 @@
 Análise de Dados com o Software R: Métodos Estatísticos, Computacionais e Econométricos
 ========================================================
 author: João Pedro Albino
-date: 18 de outubro de 2018
+date: 24 de outubro de 2018
 autosize: true
 
 Introdução
@@ -225,13 +225,25 @@ Prova de Conceito: AED
 
 
 ```r
-endereco <- "http://s3.amazonaws.com/ihbs-html/dados/ODB2013originalcorrigido.csv" ## especifica a localização do arquivo
-df <- read.csv2(endereco, fileEncoding = "latin1") ## "carga" da tabela em formato .csv para o R
-dim(df)  ## mostrará o número de linhas (casos) e colunas (variáveis) já em formato de data.frame em R
+## especifica a localização do arquivo
+endereco <- 
+"http://s3.amazonaws.com/ihbs-html/dados/ODB2013originalcorrigido.csv"
+ ## "carga" da tabela em formato .csv para o R
+df <- read.csv2(endereco, fileEncoding = "latin1")
+## mostrará o número de linhas (casos) e colunas (variáveis) já em formato de data.frame em Rdim(df) 
+## mostra linhas 1 a 3 e as colunas de 1 a 8 de "df""
+df[1:3, 1:8]  
 ```
 
 ```
-[1] 23 50
+  Indicação.de.data.e.hora Número Locais.principais.de.trabalho      Sexo
+1        7/11/2013 8:26:49  67788                      UCR, UAT Masculino
+2        7/11/2013 8:56:32  65790                           UCR  Feminino
+3       7/16/2013 12:46:07  65788                           UCR Masculino
+  Data.de.nascimento Altura  Peso Número.do.calçado.que.calça
+1         10/13/1982   1.71 102.0                          41
+2           3/9/1988   1.60  58.2                          35
+3           4/3/1986   1.89  84.0                          44
 ```
 
 Prova de Conceito: AED
@@ -1464,10 +1476,10 @@ Concluindo
 ### Salvando o data.frame modificado em arquivo no seu computador
 
 ```r
-#diretorio <-
-#"C:/OneDrive/Projetos 2018/Ciencia de Dados/Introducao a Ciencia de Dados/Projetos/Analise de Dados com o Software R/dados/ODB2018.csv" ## Em Windows
-diretorio = "~/Downloads/AED/dados/ODB2018.csv" ## Em MacOsX
-write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) # Salvando...
+diretorio <-"../dados/ODB2018.csv" ## Em Windows
+#diretorio = "~/Downloads/AED/dados/ODB2018.csv" ## Em MacOsX
+# Salvando...
+write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) 
 ```
 
 Concluindo

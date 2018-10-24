@@ -1,7 +1,7 @@
 ---
 title: "Análise de Dados com o Software R: Métodos Estatísticos, Computacionais e Econométricos"
 author: "João Pedro Albino"
-date: "13 de outubro de 2018"
+date: "24 de outubro de 2018"
 output:
   word_document: default
   pdf_document: default
@@ -32,11 +32,11 @@ O objetivo deste trabalho é o de apresentar e discutir alguns conceitos sobre c
 ## Fundamentação Teórica 
 ### Prova de Conceito (PoC)
 
-Uma prova de conceito, ou PoC ( _Proof of Concept_) é um termo utilizado para denominar um modelo prático que possa provar um conceito teórico estabelecido por uma pesquisa ou artigo técnico, afirma Pineiro (2010) . A POC é uma demonstração, com o propósito de verificar se determinados conceitos ou teorias têm potencial para aplicação no mundo real, de acordo com Jansen e Jansen (2018). Uma POC é, portanto, segundo Jensen e Jensen (2018), um _protótipo_ projetado para determinar a viabilidade, mas não representa os elementos producidos (ou _entregas_). A prova de conceito é também conhecida como _prova de princípio_.
+Uma prova de conceito, ou PoC ( _Proof of Concept_) é um termo utilizado para denominar um modelo prático que possa provar um conceito teórico estabelecido por uma pesquisa ou artigo técnico, afirma Pineiro (2010) . A POC é uma demonstração, com o propósito de verificar se determinados conceitos ou teorias têm potencial para aplicação no mundo real, de acordo com Jansen e Jansen (2018). Uma POC é, portanto, segundo Jensen e Jensen (2018), um _protótipo_ projetado para determinar a viabilidade, mas não representa os elementos produzidos (ou _entregas_). A prova de conceito é também conhecida como _prova de princípio_.
 
-De acorso com Jansen e Jansen (2018), uma POC é um termo com várias interpretações em diferentes áreas. O POC no desenvolvimento de software descreve processos distintos com diferentes objetivos e funções dos participantes. A POC também pode se referir a soluções parciais envolvendo um pequeno número de usuários atuando em funções comerciais para estabelecer se um sistema satisfaz determinados requisitos. 
+De acordo com Jansen e Jansen (2018), uma POC é um termo com várias interpretações em diferentes áreas. O POC no desenvolvimento de software descreve processos distintos com diferentes objetivos e funções dos participantes. A POC também pode se referir a soluções parciais envolvendo um pequeno número de usuários atuando em funções comerciais para estabelecer se um sistema satisfaz determinados requisitos. 
 
-O objetivo geral do POC é encontrar soluções para problemas técnicos, como a forma como os sistemas podem ser integrados ou o throughput pode ser alcançado através de uma determinada configuração.
+O objetivo geral do POC é encontrar soluções para problemas técnicos, como a forma como os sistemas podem ser integrados ou o __throughput__ (taxa de transferência) pode ser alcançada através de uma determinada configuração.
 
 Segundo Pinheiro (2010), uma POC pode ser considerada também uma implementação, resumida ou incompleta, _de um método ou de uma ideia_, realizada com o propósito de verificar que o conceito ou teoria em questão é suscetível de ser explorada de forma prática.
 
@@ -44,7 +44,7 @@ De acordo com Robinson (2017), a linguagem R é utilizada por muitos pesquisador
 
 Neste trabalho, iremos utilizar o método proposto em Judd et. ali. (2017) para análise, inspeção, limpeza, transformação e modelagem de dados com o objetivo de demonstrar que o método descrito nos permite descobrir informações úteis, gerar conclusões e apoiar o ensino de ciência de dados por meio das características oferecidas pela linguagem R.
 
-### O Ecosistema R
+### O Ecossistema R
 
 O __R__, algumas vezes grafado em minúscula, como **r**, é uma linguagem e também um ambiente de desenvolvimento integrado voltado para cálculos estatísticos e gráficos.
 De acordo com Ishaka (1998), originalmente a linguagem foi criada por Ross Ihaka e Robert Gentleman no departamento de Estatística da universidade de Auckland, Nova Zelândia, e foi desenvolvida por meio de um esforço colaborativo de pessoas distribuídas em vários locais do mundo.
@@ -55,9 +55,9 @@ O R é uma linguagem e um ambiente MUITO similar ao S - podendo ser considerado 
 
 O código fonte do R está disponível sob a licença GNU/GPL e as versões binárias pré-compiladas são fornecidas para Windows, Macintosh, e muitos sistemas operacionais Unix/Linux. O R é também altamente expansível com o uso dos **pacotes** - bibliotecas com sub-rotinas específicas ou voltadas para áreas específicas de estudo. Um conjunto de pacotes básico ( _base_) está incluso em toda instalação do R, porém, muitos outros pacotes estão disponíveis na rede de distribuição do R (CRAN - _Comprehensive R Archive Network_).
 
-Todas as características do R citadas anteriormente formam o conceito do **ecosistema R** (R Ecosystem). De acordo com Plakidasa et ali. (2017), um _ecosistema_ representa uma mudança no conceito de desenvolvimento de projetos: passa-se do desenvolvimento monolítico verticalmente integrado de produtos para modelos mais abertos, modulares e colaborativos. Os ecossistemas de software, afirmam os autores, representam o passo mais recente no desenvolvimento de aplicações onde uma comunidade de desenvolvedores colabora de forma assíncrona, e muitas vezes sem uma direção centralizada, em uma plataforma única ou mercado de software. O objetivo de se investir e trabalhar em prol de um _ecossistema_ é que todos os membros obterão mais benefícios por fazer parte dele, em comparação com uma abordagem mais tradicional de desenvolvimento de produtos de software com papéis segregados, baixo nível de colaboração e processos fechados, afirmam Plakidasa et. ali. (2017). 
+Todas as características do R citadas anteriormente formam o conceito do **ecossistema R** (R Ecosystem). De acordo com Plakidasa et ali. (2017), um _ecosistema_ representa uma mudança no conceito de desenvolvimento de projetos: passa-se do desenvolvimento monolítico verticalmente integrado de produtos para modelos mais abertos, modulares e colaborativos. Os ecossistemas de software, afirmam os autores, representam o passo mais recente no desenvolvimento de aplicações onde uma comunidade de desenvolvedores colabora de forma assíncrona, e muitas vezes sem uma direção centralizada, em uma plataforma única ou mercado de software. O objetivo de se investir e trabalhar em prol de um _ecossistema_ é que todos os membros obterão mais benefícios por fazer parte dele, em comparação com uma abordagem mais tradicional de desenvolvimento de produtos de software com papéis segregados, baixo nível de colaboração e processos fechados, afirmam Plakidasa et. ali. (2017). 
 
-A linguagem R é largamente utilizada entre estatísticos e analistas de dados para realizar análise computacional sistemática de dados ou estatísticas. (MUENCHEN,2017). De acordo com Robinson (2017), pesquisas e levantamentos realizados junto a profissionais da área de ciência de dados mostrraram que a popularidade do R aumentou substancialmente nos últimos dez anos. Segundo pesquisas realizadas em 2017, o R é bastante utilizado nas universidades americanas, onde é uma escolha padrão para pesquisa acadêmica, especialmente nas áreas de _ciências sociais_ e _biologia_.
+A linguagem R é largamente utilizada entre estatísticos e analistas de dados para realizar análise computacional sistemática de dados ou estatísticas. (MUENCHEN,2017). De acordo com Robinson (2017), pesquisas e levantamentos realizados junto a profissionais da área de ciência de dados mostraram que a popularidade do R aumentou substancialmente nos últimos dez anos. Segundo pesquisas realizadas em 2017, o R é bastante utilizado nas universidades americanas, onde é uma escolha padrão para pesquisa acadêmica, especialmente nas áreas de _ciências sociais_ e _biologia_.
 
 A área com o segundo maior número de usuários em R, afirma Robinson (2017), por uma margem muito próxima, é a da área de _saúde_. Este dado provavelmente não será uma surpresa para os bioestatísticos, já que o R é a ferramenta escolhida em muitos métodos estatísticos utilizados em estudos clínicos e em bioinformática.
 
@@ -67,21 +67,21 @@ Entretanto, segundo Robinson (2017), uma área que não utiliza muito o R, em re
 
 R é uma linguagem usada para cálculos estatísticos, análise de dados e representação gráfica de dados. Criado na década de 1990 o R foi projetado como uma plataforma estatística para limpeza, análise e representação de dados. De acordo com pesquisa da Burtch Works, realizada em 2107, de todos os cientistas de dados pesquisados, 40% preferem R, 34% preferem SAS e 26% Python. De acordo com a 18ª pesquisa anual da KDNuggets sobre o uso de software de ciência de dados, o R é a segunda linguagem mais popular em ciência de dados. Isso mostra como a programação R é popular em ciência de dados. Até mesmo as tendências do Google mostram a crescente popularidade da Programação R. (NewGenApps, 2017).
 
-Quando se desenvolve um projeto em de ciência de dados, muito provavelmente, como visto na pesquisa da KNUggets, se opta entre os ambientes R e Python. Embora cada um delas seja igualmente competente e tenha prós e contras, segndo NewGenApps (2017), existem vantagens distintas associadas a cada uma delas. Neste tranalho apresentaremos as vantagens do R e seu uso em ciência de dados e por que este ecosistema se mostra uma escolha ideal. 
+Quando se desenvolve um projeto em de ciência de dados, muito provavelmente, como visto na pesquisa da KDnuggets, se opta entre os ambientes R e Python. Embora cada um delas seja igualmente competente e tenha prós e contras, segundo NewGenApps (2017), existem vantagens distintas associadas a cada uma delas. Neste trabalho apresentaremos as vantagens do R e seu uso em ciência de dados e por que este ecossistema se mostra uma escolha ideal. 
 
 Nos tópicos seguintes serão apresentadas e discutidas algumas razões para termos optado por escolher a linguagem R nesta prova de conceito de ciência de dados, utilizando como base o trabalho apresentado em NewGenApps (2017).
 
 #### 1. Academia
 
-R é uma linguagem muito popular na academia. Muitos pesquisadores e estudiosos usam o R para realizar seus ensaios em ciência de dados. Por ser a línguagem preferida pelos acadêmicos, isso cria um grande grupo de pessoas que têm um bom conhecimento prático de programação em R. Também existe uma vasta literatura disponível em ciência de dados em R (NewGenApps, 2017 e ROBINSON, 2017).
+R é uma linguagem muito popular na academia. Muitos pesquisadores e estudiosos usam o R para realizar seus ensaios em ciência de dados. Por ser a linguagem preferida pelos acadêmicos, isso cria um grande grupo de pessoas que têm um bom conhecimento prático de programação em R. Também existe uma vasta literatura disponível em ciência de dados em R (NewGenApps, 2017 e ROBINSON, 2017).
 
 #### 2. Data wrangling - Preparação dos Dados
 
-O termo **data wrangling** - em algumas literaturas também definido como _data mugging_ ou _data preparation_ – pode ser traduzido como **preparação de dados**. É o processo de limpeza dos _ data sets_ (conjuntos de dados) complexos e confusos para permitir o consumo conveniente e o processo posterior de análises. (NewGenApp, 2017). Este é um processo muito importante e demorado em ciência de dados.  O conceito é relativamente recente e diz respeito ao ato de coletar, limpar, normalizar, combinar, estruturar e organizar os dados que serão analisados. É o primeiro passo para que a mensuração das informações extraídas com o trabalho de análise seja bem sucedido e traga significativos apontamentos para o processo em geral.(Profap (2018).
+O termo **data wrangling** - em algumas literaturas também definido como _data mugging_ ou _data preparation_ – pode ser traduzido como **preparação de dados**. É o processo de limpeza dos _ data sets_ (conjuntos de dados) complexos e confusos para permitir o consumo conveniente e o processo posterior de análises. (NewGenApp, 2017). Este é um processo muito importante e demorado em ciência de dados.  O conceito é relativamente recente e diz respeito ao ato de coletar, limpar, normalizar, combinar, estruturar e organizar os dados que serão analisados. É o primeiro passo para que a mensuração das informações extraídas com o trabalho de análise seja bem sucedido e traga significativos apontamentos para o processo em geral. (PROFAP, 2018).
 
-Dentro do processo de preparação de dados são realizados processos, tais como: visualização de dados; agregação de dados; treinamento de um modelo estatístico; bem como outros métodos potenciais. A manipulação de dados como um processo normalmente segue um conjunto de etapas gerais que começam com a extração da fonte dos dados **brutos** , "filtragem" desses dados brutos utilzando-se algoritmos (por exemplo, de classificação) ou análise dos dados em estruturas de dados predefinidas e, finalmente, depositar o conteúdo resultante em um _data set_ "limpo" (preparado) para armazenamento e uso futuro.
+Dentro do processo de preparação de dados são realizados processos, tais como: visualização de dados; agregação de dados; treinamento de um modelo estatístico; bem como outros métodos potenciais. A manipulação de dados como um processo normalmente segue um conjunto de etapas gerais que começam com a extração da fonte dos dados **brutos** , "filtragem" desses dados brutos utilizando-se algoritmos (por exemplo, de classificação) ou análise dos dados em estruturas de dados predefinidas e, finalmente, depositar o conteúdo resultante em um _data set_ "limpo" (preparado) para armazenamento e uso futuro.
 
-O ecossistema R possui uma extensa biblioteca de ferramentas para preparação e manipulação de dados "brutos". Alguns dos pacotes populares para manipulação de dados em R incluem: (a) pacote dplyr, conhecido por seus recursos de exploração e transformação de dados e sintaxe de encadeamento altamente adaptável; (b) pacote data.table - permite uma manipulação mais rápida do conjunto de dados com codificação mínima, simplificando a agregação de dados e reduzindo drasticamente o tempo de computação; e (c) pacote readr - auxilia na leitura de várias formas de dados executando a leitura em rápida velocidade. (NewGenApp, 2017). 
+O ecossistema R possui uma extensa biblioteca de ferramentas para preparação e manipulação de dados "brutos". Alguns dos pacotes populares para manipulação de dados em R incluem: (a) pacote _dplyr_, conhecido por seus recursos de exploração e transformação de dados e sintaxe de encadeamento altamente adaptável; (b) pacote _data.table_ - permite uma manipulação mais rápida do conjunto de dados com codificação mínima, simplificando a agregação de dados e reduzindo drasticamente o tempo de computação; e (c) pacote _readr_ - auxilia na leitura de várias formas de dados executando a leitura em rápida velocidade. (NewGenApp, 2017). 
 
 #### 3. Visualização de dados
 
@@ -93,21 +93,21 @@ O R é uma linguagem projetada especialmente para análise estatística e reconf
 
 #### 5. Aprendizado de máquina
 
-Em algum momento no porocesso de ciência de dados, um programador pode precisar treinar o algoritmo e trazer capacidades de automação e aprendizagem de máquina para realizar previsões. O R oferece muitas ferramentas aos desenvolvedores para treinar e avaliar um algoritmo e prever eventos futuros. Assim, o R torna o aprendizado de máquina (um ramo da ciência de dados) muito mais fácil e acessível. A lista de pacotes R para aprendizado de máquina é extensa. Os pacotes de aprendizado de máquina em R contém: MICE (para lidar com valores ausentes); rpart & PARTY (para criar partições de dados); CARET (para treinamento de classificação e regressão); randomFOREST (para criar árvores de decisão); além de outros.
+Em algum momento no porocesso de ciência de dados, um programador pode precisar treinar o algoritmo e trazer capacidades de automação e aprendizagem de máquina para realizar previsões. O R oferece muitas ferramentas aos desenvolvedores para treinar e avaliar um algoritmo e prever eventos futuros. Assim, o R torna o aprendizado de máquina (um ramo da ciência de dados) muito mais fácil e acessível. A lista de pacotes R para aprendizado de máquina é extensa. Os pacotes de aprendizado de máquina em R contém: **MICE** (para lidar com valores ausentes); **rpart** e **PARTY** (para criar partições de dados); **CARET** (para treinamento de classificação e regressão); **randomFOREST** (para criar árvores de decisão); além de outros.
 
 #### 6. Disponibilidade
 
-A linguagem de programação R é um software de códio aberto (**open source**). Isso faz com que seja utilizável em projetos de qualquer tamanho. Como é de código aberto, os desenvolvimentos em R produzem os códigos em uma rápida escala e a comunidade de desenvolvedores é bastante grande. Em agosto de 2018, o R ficou em 18º lugar no índice TIOBE, uma medida de popularidade das linguagens de programação. (Thieme, 2018). Em conjunto com uma vasta quantidade de recursos para o aprendizado, faz da programação em R uma escolha adequada para começar a aprender programação para ciência de dados. Como há muitos novos desenvolvedores explorando o cenário de programação em R, é mais fácil e econômico recrutar ou terceirizar desenvolvedores de R.
+A linguagem de programação R é um software de código aberto (**open source**). Isso faz com que seja utilizável em projetos de qualquer tamanho. Como é de código aberto, os desenvolvimentos em R produzem os códigos em uma rápida escala e a comunidade de desenvolvedores é bastante grande. Em agosto de 2018, o R ficou em 18º lugar no índice TIOBE, uma medida de popularidade das linguagens de programação. (Thieme, 2018). Em conjunto com uma vasta quantidade de recursos para o aprendizado, faz da programação em R uma escolha adequada para começar a aprender programação para ciência de dados. Como há muitos novos desenvolvedores explorando o cenário de programação em R, é mais fácil e econômico recrutar ou terceirizar desenvolvedores de R.
 
 ### Análise de Dados: Fundamentos da Metodologia
 
 De acordo com Judd et. ali. (2017), a análise de dados é o processo de inspeção, limpeza, transformação e modelagem de dados com o objetivo de descobrir informações úteis, gerar conclusões e apoiar a tomada de decisões. A análise de dados tem múltiplas facetas e abordagens, abrangendo diversas técnicas sob vários nomes, sendo usada em diferentes domínios tais como negócios, ciências e ciências sociais.
 
-Ainda segundo Judd et ali. (2017), em aplicações estatísticas, a análise de dados pode ser dividida em estatística descritiva, análise exploratória de dados (EDA) e análise confirmatória de dados (CDA). O EDA se concentra na descoberta de novos recursos nos dados, enquanto o CDA se concentra na confirmação ou falsificação de hipóteses existentes. A análise preditiva se concentra na aplicação de modelos estatísticos para previsão ou classificação preditiva, enquanto a análíse de texto aplica técnicas estatísticas, lingüísticas e estruturais para extrair e classificar informações de fontes textuais, uma espécie de dados não estruturados. Todas as opções acima, de acordo com os autores, são variedades de análise de dados.
+Ainda segundo Judd et ali. (2017), em aplicações estatísticas, a análise de dados pode ser dividida em estatística descritiva, análise exploratória de dados (EDA) e análise confirmatória de dados (CDA). O EDA se concentra na descoberta de novos recursos nos dados, enquanto o CDA se concentra na confirmação ou falsificação de hipóteses existentes. A análise preditiva se concentra na aplicação de modelos estatísticos para previsão ou classificação preditiva, enquanto a análise de texto aplica técnicas estatísticas, linguísticas e estruturais para extrair e classificar informações de fontes textuais, uma espécie de dados não estruturados. Todas as opções acima, de acordo com os autores, são variedades de análise de dados.
 
 #### O processo de Análise de Dados
 
-Um processo de _análise_ busca dividir um todo em componentes distintos e interdepenentes para se realizar um exame individual. A análise de dados é um processo para obter dados brutos e convertê-los em informações úteis para a tomada de decisão pelos usuários. Os dados são coletados e analisados para responder perguntas, testar hipóteses ou refutar teorias. (JUDD et. al., 2017).
+Um processo de _análise_ busca dividir um todo em componentes distintos e interdependentes para se realizar um exame individual. A análise de dados é um processo para obter dados brutos e convertê-los em informações úteis para a tomada de decisão pelos usuários. Os dados são coletados e analisados para responder perguntas, testar hipóteses ou refutar teorias. (JUDD et. al., 2017).
 
 Tukey (1961)  definiu a análise de dados em 1961 como: "procedimentos para analisar dados, técnicas para interpretar os resultados de tais procedimentos, formas de planejar a coleta de dados para tornar sua análise mais fácil, mais precisa ou mais depurada, e todas as engenharia e resultados de estatísticas (matemáticas) que se aplicam à análise de dados". 
 
@@ -116,11 +116,11 @@ As principais fases de um processo de análise serão descritas nos subtópicos 
 
 ##### Requisitos de dados
 
-Os dados necessários são utilizados como entradas para a análise, que é especificada com base nos requisitos daqueles que dirigem a análise ou clientes (que usarão o produto acabado da análise). O tipo geral de entidade sobre o qual os dados serão coletados é referido como uma unidade experimental (por exemplo, uma pessoa ou população de pessoas). Variáveis específicas relativas a uma população (por exemplo, idade e renda) podem ser especificadas e obtidas. Os dados podem ser _numéricos_ ou _categóricos_ (ou seja, um rótulo de texto para números).(O'NEIL e SCHUTT, 2013).
+Os dados necessários são utilizados como entradas para a análise, que é especificada com base nos requisitos daqueles que dirigem a análise ou clientes (que usarão o produto acabado da análise). O tipo geral de entidade sobre o qual os dados serão coletados é referido como uma unidade experimental (por exemplo, uma pessoa ou população de pessoas). Variáveis específicas relativas a uma população (por exemplo, idade e renda) podem ser especificadas e obtidas. Os dados podem ser _numéricos_ ou _categóricos_ (ou seja, um rótulo de texto para números). (O'NEIL e SCHUTT, 2013).
 
 ##### Coleta de dados
 
-Os dados são coletados de várias fontes. Os requisitos podem ser comunicados pelos analistas aos guardiões dos dados, como o pessoal de tecnologia da informação dentro de uma organização. Os dados também podem ser coletados de sensores no ambiente, como câmeras de tráfego, satélites, dispositivos de gravação, etc. Também podem ser obtidos por meio de entrevistas, downloads de fontes on-line ou leitura de documentação.(O'NEIL e SCHUTT, 2013).
+Os dados são coletados de várias fontes. Os requisitos podem ser comunicados pelos analistas aos guardiões dos dados, como o pessoal de tecnologia da informação dentro de uma organização. Os dados também podem ser coletados de sensores no ambiente, como câmeras de tráfego, satélites, dispositivos de gravação, etc. Também podem ser obtidos por meio de entrevistas, downloads de fontes on-line ou leitura de documentação. (O'NEIL e SCHUTT, 2013).
 
 ##### Processamento de dados
 
@@ -129,13 +129,18 @@ Os dados inicialmente obtidos devem ser processados ou organizados para análise
 ##### Limpeza de dados
 
 Depois de processados e organizados, os dados podem estar incompletos, conter duplicatas ou conter erros. A necessidade de limpeza de dados surgirá por  problemas na forma como os dados foram inseridos e armazenados. Limpeza de dados é o processo de prevenir e corrigir esses erros. (The SunTec India Blog, 2016). 
-Tarefas comuns incluem correspondência de registros, identificação de imprecisão de dados, qualidade geral de dados existentes, deduplicação e segmentação de colunas. (Microsoft Research, 2012). 
+
+Tarefas comuns incluem correspondência de registros, identificação de imprecisão de dados, qualidade geral de dados existentes, de duplicação e segmentação de colunas. (Microsoft Research, 2012). 
+
 Tais problemas nos dados, segundo Koomey (2006), também podem ser identificados através de uma variedade de técnicas analíticas. Por exemplo, em informações financeiras, os totais de variáveis específicas podem ser comparados com números publicados separadamente considerados confiáveis. Quantidades incomuns acima ou abaixo dos limites predeterminados também podem ser revisadas. Existem vários tipos de limpeza de dados que dependem do tipo de dados, como números de telefone, endereços de e-mail, empregadores, etc. 
+
 De acordo com Hellerstein (2008), os métodos de dados quantitativos para detecção de outliers podem ser usados para se livrar de possíveis dados inseridos incorretamente. Os verificadores ortográficos de dados textuais podem ser usados para diminuir a quantidade de palavras digitadas incorretamente, mas é mais difícil dizer se as palavras estão corretas.
 
 ##### Análise exploratória de dados (AED)
 
-Depois que os dados estão limpos, podem ser _analisados_. Os analistas podem aplicar uma diversidade de técnicas referidas como **análise exploratória de dados** para começar a entender as mensagens contidas nos dados. Segundo Bahrens (1997), o processo de exploração pode resultar em limpeza adicional de dados ou solicitações adicionais de dados, portanto, essas atividades podem ser de natureza iterativa. Estatísticas descritivas, como a média ou mediana, podem ser geradas para ajudar a entender os dados. A _visualização de dados_ também pode ser usada para examinar os dados em formato gráfico, para obter informações adicionais sobre as mensagens dentro dos dados. (O'NEIL e SCHUTT, 2013).
+Depois que os dados estão limpos, podem ser _analisados_. Os analistas podem aplicar uma diversidade de técnicas referidas como **análise exploratória de dados** para começar a entender as mensagens contidas nos dados. Segundo Bahrens (1997), o processo de exploração pode resultar em limpeza adicional de dados ou solicitações adicionais de dados, portanto, essas atividades podem ser de natureza iterativa. Estatísticas descritivas, como a média ou mediana, podem ser geradas para ajudar a entender os dados. 
+
+A _visualização de dados_ também pode ser usada para examinar os dados em formato gráfico, para obter informações adicionais sobre as mensagens dentro dos dados. (O'NEIL e SCHUTT, 2013).
 
 ##### Modelagem e Algoritmos
 
@@ -153,12 +158,12 @@ Depois que os dados são analisados, podem ser elaborados relatórios em vários
 
 Ao determinar como comunicar os resultados, o analista pode considerar técnicas de visualização de dados para ajudar a comunicar de forma clara e eficiente a mensagem ao público-alvo. A visualização de dados usa exibições de informações (como tabelas e gráficos) para ajudar a comunicar as principais mensagens contidas nos dados. As tabelas são úteis para um usuário que pode pesquisar números específicos, enquanto gráficos (por exemplo, gráficos de barras ou gráficos de linhas) podem ajudar a explicar as mensagens quantitativas contidas nos dados. 
 
-O tópicos do Processo de Ciência de Dados discutidos podem ser visualizados na Figura 1.
+Os tópicos do Processo de Ciência de Dados discutidos podem ser visualizados na Figura 1.
 \begin{center}
 
 Figura 1. Processo de Ciência de Dados
 \includegraphics{data-science-process}
-Fonte: Schutt, Rachel e O’Neil, Cathy (2014).
+Fonte: Schutt e O’Neil (2014).
 
 \end{center}
 
@@ -167,24 +172,28 @@ Fonte: Schutt, Rachel e O’Neil, Cathy (2014).
 A finalidade da Análise Exploratória de Dados (AED) é a de _examinar os dados_ antes da aplicação de qualquer técnica estatística. Seu principal objetivo é o de obter um entendimento básico dos dados, seu formato e as relações existentes entre as variáveis carregadas no R.
 
 ### Leitura e carga dos dados
-A primeira ação a ser realizada na Análise Exploratória dos Dados (AED, ou Exploratory Data Analysis, EAD) é a carga dos dados para o R. Os dados que serão utilizados nesta AED estão armazenados no Amazon Web Services e estão disponíveis para acesso no link especificado no trecho de código em R. Grande parte do código utilizado neste trabalho foi desenvolvido pelo proessor da USP/ESALQ, Dr.Adriano Azevedo Filho e estão disponíveis no link:http://rstudio-pubs-static.s3.amazonaws.com/7342_3aee84b4bc9549adb3080f06c69174e1.html.
+A primeira ação a ser realizada na Análise Exploratória dos Dados (AED, ou Exploratory Data Analysis, EAD) é a carga dos dados para o R. Os dados que serão utilizados nesta AED estão armazenados no Amazon Web Services e estão disponíveis para acesso no link especificado no trecho de código em R. Grande parte do código utilizado neste trabalho foi desenvolvido pelo proessor da USP/ESALQ, Dr. Adriano Azevedo Filho e estão disponíveis no link:http://rstudio-pubs-static.s3.amazonaws.com/7342_3aee84b4bc9549adb3080f06c69174e1.html.
 
 ```{r lendo-os-dados, echo=TRUE}
-endereco <- "http://s3.amazonaws.com/ihbs-html/dados/ODB2013originalcorrigido.csv" ## especifica a localização do arquivo
-df <- read.csv2(endereco, fileEncoding = "latin1") ## "carga" da tabela em formato .csv para o R
-dim(df)  ## mostrará o número de linhas (casos) e colunas (variáveis) já em formato de data.frame em R
-df[1:3, 1:8]  ## mostra linhas 1 a 3 e as colunas de 1 a 8 de "df""
+## especifica a localização do arquivo
+endereco <- 
+"http://s3.amazonaws.com/ihbs-html/dados/ODB2013originalcorrigido.csv"
+ ## "carga" da tabela em formato .csv para o R
+df <- read.csv2(endereco, fileEncoding = "latin1")
+## mostrará o número de linhas (casos) e colunas (variáveis) já em formato de data.frame em Rdim(df) 
+## mostra linhas 1 a 3 e as colunas de 1 a 8 de "df""
+df[1:3, 1:8]  
 ```
 
-No trecho do código (data chunk) mostrado o símbolo "<-" é um símbolo de atribuição, ou seja atribui um valor a uma variável. Este símbolo pode também ser substituídos pelo operador de atribuição "=".
+No trecho do código (data chunk) mostrado o símbolo "<-" é um símbolo de atribuição, ou seja, atribui um valor a uma variável. Este símbolo pode também ser substituídos pelo operador de atribuição "=".
 
 O comando (ou função) "read.csv2" lê um arquivo no formato de tabela ".csv" e cria um **data frame** com os casos ou observações correspondo às linhas e as variáveis (correspondendo às colunas) nos campos da estrutura de dados nomeada como " _df_ ". Um data frame (estrutura de dados) é uma estrutura interna do R utilizado para armazenar dados em formato correspondente a de uma tabela. São coleções fortemente acopladas de variáveis que compartilham muitas das propriedades das matrizes e de listas, utilizadas como a estrutura de dados fundamental para a maioria dos softwares de modelagem em R.
 
-A opção _fileEncoding=“latin1”_ em geral não é desnecessária em sistemas Windows configurados para o Brasil, mas pode ser importante para outros sistemas, como no MAcOs ou Linux, que normalmente estão configurados para UTF-8. 
+A opção _fileEncoding=“latin1”_ em geral não é necessária em sistemas Windows configurados para o Brasil, mas pode ser importante para outros sistemas, como no MAcOs ou Linux, que normalmente estão configurados para o padrâo UTF-8. 
 
 Como podemos observar o _data frame_, com o nome "df" atribuído, contém vinte e três observações (ou casos) e cinquenta variáveis.
 
-É sempre oportuno verificar se o arquivo foi lido corretamente. Existem muitas funções no R que facilitam a verificação de potenciais problemas. O comando _dim_ mostrado no trecho de código anterior permite verificar algumas características do _data frame_. Outros comandos que oferecem mais opções sâo str(df) - que exibe a estrutura interna de um objeto R de forma compacta -, ou _df[1:3, 1:4]_ - que exibe as 3 primeiras linhas do _data frame_ "df", e as 8 primeiras variáveis.
+É sempre oportuno verificar se o arquivo foi lido corretamente. Existem muitas funções no R que facilitam a verificação de potenciais problemas. O comando _dim_ mostrado no trecho de código anterior permite verificar algumas características do _data frame_. Outros comandos que oferecem mais opções são str(df) - que exibe a estrutura interna de um objeto R de forma compacta -, ou _df[1:3, 1:4]_ - que exibe as 3 primeiras linhas do _data frame_ "df", e as 8 primeiras variáveis.
 
 
 ### Preparação dos Dados 
@@ -193,7 +202,7 @@ Como podemos observar o _data frame_, com o nome "df" atribuído, contém vinte 
 names(df)
 ```
 
-Os dados inicialmente carregados devem ser processados ou organizados antes da realização da análise. Como demonstrado no trecho de código exibido, neste caso específico, verifica-se que o nome das vaiááveis são longos e podem dificultar a sua caracterização e/ou manipulação no R.
+Os dados inicialmente carregados devem ser processados ou organizados antes da realização da análise. Como demonstrado no trecho de código exibido, neste caso específico, verifica-se que o nome das variáveis são longos e podem dificultar a sua caracterização e/ou manipulação no R.
 
 Os nomes longos das variáveis serão modificados para atributos mais compactos afim de facilitar sua manipulação nas futuras análises. Além disso, como os nomes são usados como rótulos para identificação das variáveis nos resultados (tabelas, gráficos, etc.), nomes muito longos podem ser inconvenientes.
 
@@ -215,9 +224,9 @@ names(df) <- novonome ## atribuindo novos nomes de variáveis
 names(df)  ## exibindo os novos nomes
 ```
 
-Com relação ao _code chunk_ anterior, deve-se observar que a _função "c"_ do R cria um _vetor_, concatenando elementos separados por vírgulas. No caso, criou-se um vetor de textos ou "string". Cada "string" substituirá o "string" original que definia o nome da variável, na ordem mostrada quando da primeira execução de names(alunos)
+Com relação ao _code chunk_ anterior, deve-se observar que a _função "c"_ do R cria um _vetor_, concatenando elementos separados por vírgulas. No caso, criou-se um vetor de textos ou "string". Cada "string" substituirá o "string" original que definia o nome da variável, na ordem mostrada quando da primeira execução de **names(alunos)**.
 
-Da mesma forma que se pode alterar os nomes das variáveis, podemos também modificar os nomes ou identificadores que caracterizam as _categorias_"_ ou _níveis_ de variáveis qualitativas chamadas de fatores (factor). 
+Da mesma forma que se pode alterar os nomes das variáveis, podemos também modificar os nomes ou identificadores que caracterizam as _categorias_" ou _níveis_ de variáveis qualitativas chamadas de fatores (factor). 
 
 Para ter acesso a cada variável, precedemos o nome da variável com o nome do _data.frame_ ao qual a variável pertence, separando os dois nomes com o símbolo **$**. 
 
@@ -280,7 +289,7 @@ levels(df$oda) <- c("agop", "agpc", "ambi", "inpc", "mana", "manai", "mani","par
 
 ### Análise Descritiva
 
-Após a _limpesa_ e _modificação_ (preparação dos dados)no data.frame, o próximo passo é a realização de uma _análise descritiva_. Esta etapa é fundamental, pois uma análise descritiva detalhada permite ao pesquisador familiarizar-se com os dados, organizá-los e sintetizá-los de forma a obter as informações necessárias para responder as questões estudadas.
+Após a _limpeza_ e a _modificação_ (preparação dos dados) no data.frame, o próximo passo é a realização de uma _análise descritiva_. Esta etapa é fundamental, pois uma análise descritiva detalhada permite ao pesquisador familiarizar-se com os dados, organizá-los e sintetizá-los de forma a obter as informações necessárias para responder as questões estudadas.
 
 #### Filtros, seleções e estatísticas (medidas-resumo) incondicionais e condicionais
 
@@ -308,12 +317,12 @@ Por exemplo, se quisermos obter os valores de altura para as observações assoc
 df$alt[df$sex == "f"]
 ```
 
-Observa-se que a avaliação de alunos$sex==“f” resultará em:
+Observa-se que a avaliação de __alunos$sex==“f”__ resultará em:
 ``` {r, observacao, echo=TRUE}
 ## Observações de altura dos alunos do sexo feminino
 df$sex == "f"
 ```
-Somente os valores de df$alt correspondentes às posições que têm o resultado TRUE foram selecionadas no comando anterior.
+Somente os valores de __df$alt__ correspondentes às posições que têm o resultado TRUE foram selecionadas no comando anterior.
 
 Para obtermos as observações de altura correspondentes às mulheres (f) trabalhando em Alto Taquari (at) utilizamos:
 ``` {r, cruzanmento1, echo=TRUE}
@@ -328,13 +337,14 @@ df$alt[df$sex == "f" | df$pes >= 70]  # (| corresponde ao **ou** lógico)
 ```
 
 Em R, alguns operadores lógicos mais usuais são:
-•	== (igual exatamente)
-•	is.equal() (igual aproximadamente)
-•	> (maior), < (menor)
-•	>= (maior ou igual), <= (menor ou igual)
-•	<> (diferente)
-•	& (e lógico), | (ou lógico)
-•	parêntesis podem ser utilizados para deixar clara a prioridade das operações
+
+1.	== (igual exatamente)
+2. is.equal() (igual aproximadamente)
+3. (maior) >, < (menor)
+4. (maior ou igual)>=, <= (menor ou igual)
+5. <> (diferente)
+6. & (e lógico), | (ou lógico)
+7. parêntesis podem ser utilizados para deixar clara a prioridade das operações
 
 ##### Estatísticas elementares condicionais e incondicionais (variáveis quantitativas)
 
@@ -352,7 +362,8 @@ min(df$alt)  # mínimo
 mean(df$alt[df$sex == "f"])  # média da altura das mulheres
 mean(df$alt[df$sex == "m"])  # média da altura dos homens
 
-# algumas estatísticas do núm do sapato para pessoas com altura maior que 1,6 trabalhando em Alto Taquari
+# algumas estatísticas do núm do sapato para pessoas 
+# com altura maior que 1,6 trabalhando em Alto Taquari
 median(df$cal[df$alt > 1.6 & df$loc == "at"])
 sd(df$cal[df$alt > 1.6 & df$loc == "at"])
 max(df$cal[df$alt > 1.6 & df$loc == "at"])
@@ -384,7 +395,7 @@ length(df$sex[df$sex == "m"])  ## frequência absoluta de homens
 length(df$sex[df$sex == "m"])/n  ## frequência relativa de mulheres
 ```
 
-Há muitas formas de analise de frequências no R, além da forma mostrada nos no trecho de código anterior. Uma forma elementar, mas prática, utiliza os comandos _table_ e _prop.table_:
+Há muitas formas de análise de frequências no R, além da forma mostrada nos no trecho de código anterior. Uma forma elementar, mas prática, utiliza os comandos _table_ e _prop.table_:
 ``` {r, frequencias2, echo=TRUE}
 ## Sexo dos df
 table(df$sex)
@@ -414,7 +425,7 @@ pie(prop.table(table(df$sex)) * 100, label = ident, col = c("lightblue2","lightb
 title(main = "Frequência relativa - sexo")
 ```
 
-Também pode-ses utilizar filtros, para obter, por exemplo, as frequências conjuntas absolutas (e dai as relativas), associadas às variáveis **df$sex** e **df$loc**:
+Também pode-se utilizar filtros, para obter, por exemplo, as frequências conjuntas absolutas (e daí as relativas), associadas às variáveis **df$sex** e **df$loc**:
 ``` {r, com_filtros, echo=TRUE}
 sum(df$sex == "f" & df$loc == "at")
 sum(df$sex == "m" & df$loc == "at")
@@ -424,13 +435,13 @@ sum(df$sex == "f" & df$loc == "po")
 sum(df$sex == "m" & df$loc == "po")
 ```
 
-Ao dividir-se os valores obtidos por _n<-length(df$sex)_ pode-se obter as frequências relativas conjuntas:
+Ao dividir-se os valores obtidos no comando anterior por _n<-length(df$sex)_, pode-se obter as frequências relativas conjuntas:
 ``` {r,freq_relativas_conjuntas, echo=TRUE}
 table(df$sex, df$loc)
 prop.table(table(df$sex, df$loc))
 ```
 
-Pode-se alterar o número de digitos significativos apresentado (para 3 por exemplo), usando a opção:
+Pode-se alterar o número de dígitos significativos apresentado (para 3 por exemplo), usando a opção:
 ``` {r, digitos, echo=TRUE}
 oldoptions <- options()  # preservando as opções existentes
 options(digits = 3)
@@ -451,7 +462,7 @@ Situações envolvendo 3 variáveis (condicional em sexo):
 prop.table(table(df$odf, df$loc, df$sex), 3)
 ```
 
-Há muitos recursos importantes (packages específicos, como **vcd** por exemplo) especializados na análise e visualização gráfica de frequências conjuntas e condicionais. Mostraremos alguns recursos elementares fundamentados nas funções básicas e um breve exemplo do uso do package **vcd** (que deve ser instalado no seu computador) e uso elementar de funções básicas.
+Há muitos recursos importantes (**packages** específicos, como **vcd** por exemplo) especializados na análise e visualização gráfica de frequências conjuntas e condicionais. Mostraremos alguns recursos elementares fundamentados nas funções básicas e um breve exemplo do uso do _package_ **vcd** (que deve ser instalado no computador) e uso elementar de funções básicas.
 ``` {r, graficos4, echo=TRUE}
 ## gráfico de barras justapostas (segunda variável no eixo x) - Frequência
 ## conjunta absoluta
@@ -479,7 +490,7 @@ title("Frequências condicionais relativas\n sexo | localização", xlab = "loca
       ylab = "%")
 ```
 
-Os próximos exemplos utilizam o gráfico tipo Mosaico do package **vcd** que deve estar instalado para que possa ser executado. Nos gráficos as regiões são proporcionais ao número de pessoas em cada categoria.
+Os próximos exemplos utilizam o gráfico tipo Mosaico do _package_ **vcd** que deve estar instalado para ser executado. Nos gráficos as regiões são proporcionais ao número de pessoas em cada categoria.
 ``` {r, vcd1, echo=TRUE}
 ## carregamento do package vcd (deve ser instalado antes)
 require(vcd)
@@ -493,7 +504,7 @@ mosaic(sex ~ loc, data = df, highlighting_fill = c("pink", "lightblue"))
 mosaic(sex ~ loc + odf, data = df, highlighting_fill = c("pink", "lightblue"))
 ```
 
-Também do package vcd há o gráfico tipo doubledecker que é útil para apresentar dados de frequências condicionais. Da mesma forma que no caso anterior, as regiões são proporcionais ao número de pessoas em cada categoria.
+Também do _package vcd_ há o gráfico tipo **doubledecker** (de dois andares) que é útil para apresentar dados de frequências condicionais. Da mesma forma que no caso anterior, as regiões são proporcionais ao número de pessoas em cada categoria.
 
 ``` {r, vcd3, echo=TRUE}
 ## carregamento do package vcd (deve ser instalado antes)
@@ -564,12 +575,13 @@ livvec <- as.factor(abrestring(df$liv, ";"))
 levels(livvec)
 ```
 
-Observa-se que há muitas correções a fazer (espaços, títulos mal-padronizados, letras com caixa diferente). A correção pode se processar pela substituição dos valores originais por valores padronizados como operacionalizado a seguir:
+Observa-se que há muitas correções a fazer (espaços, títulos mal padronizados, letras com caixa diferente). A correção pode se processar pela substituição dos valores originais por valores padronizados como operacionalizado a seguir:
 
 ``` {r, ajustes_1, echo=TRUE}
-levels(livvec)[c(1, 2, 4, 8, 34, 35)] <- c("Cinquenta Tons de Cinza mais Escuro", 
-                                           "Diablo III", "A Cabana", "A Cabana", "Sobreviver, Crescer e Perpetuar", 
-                                           "Sobreviver, Crescer e Perpetuar")
+levels(livvec)[c(1, 2, 4, 8, 34, 35)] <- 
+c("Cinquenta Tons de Cinza mais Escuro", 
+  "Diablo III", "A Cabana", "A Cabana", "Sobreviver, Crescer e Perpetuar", 
+  "Sobreviver, Crescer e Perpetuar")
 ```
 
 Verificando se está tudo correto:
@@ -577,25 +589,31 @@ Verificando se está tudo correto:
 levels(livvec)
 ```
 
-Com a reestuturação, pode-se agora mostrar as frequências absolutas, já ordenadas em ordem decrescente:
+Com a reestruturação, pode-se agora mostrar as frequências absolutas, já ordenadas em ordem decrescente:
 ``` {r, ajustes_2, echo=TRUE}
 sort(table(livvec), decreasing = TRUE)
 ```
 
 ## Concluindo
 
-### Salvando o data.frame modificado em arquivo no seu computador
+### Salvando o _data.frame_ modificado em arquivo no seu computador
 
 Para salvar o _data.frame_ **limpo**, a fim de utilizá-lo em uma futuras análises, sem a necessidade de realizar a preparação dos dados, deve-se gravá-lo em um arquivo externo ao R.
 
-Neste exemplo, o arquivo a ser salvo terá o nome **ODB2018.csv** e será utilizado o comando **write.table**. O comando _write.table(x, file=...)_ grava o argumento **x** depois de convertê-lo em um _data frame_, se já não o for em uma matriz, para um arquivo ou conexão especificado em _file=..._.: 
+Neste exemplo, o arquivo a ser salvo terá o nome **ODB2018.csv** e será utilizado o comando **write.table**. O comando _write.table(x, file=...)_ grava o argumento **x** depois de convertê-lo em um _data frame_, se o argumento já não estiver no formato de uma matriz, para um arquivo ou conexão especificado em _file=..._.: 
 ``` {r, finalizando, echo=TRUE}
-#diretorio <-"C:/OneDrive/Projetos 2018/Ciencia de Dados/Introducao a Ciencia de Dados/Projetos/Analise de Dados com o Software R/dados/ODB2018.csv" ## Em Windows
-diretorio = "~/Downloads/AED/dados/ODB2018.csv" ## Em MacOsX
-write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) # salvando...
+diretorio <-"../dados/ODB2018.csv" ## Em Windows
+#diretorio = "~/Downloads/AED/dados/ODB2018.csv" ## Em MacOsX
+# Salvando...
+write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) 
 ```
 
-O data.frame alunos será salvo no arquivo “ODB2018.csv”, com as opções corretas que definem um arquivo **csv** no formato BR desejado; **“;”** separando os valores, **“,”** separando decimais; os nomes das variáveis já compactadas na primeira linha do arquivo; e sem nomes identificando linhas (por _default_, a opção _row.names=NA_).
+O _data.frame_ alunos será salvo no arquivo “ODB2018.csv”, com as opções corretas que:
+- definem um arquivo **csv** no formato BR desejado; 
+- **“;”** separando os valores;
+- **“,”** separando decimais; 
+- os nomes das variáveis compactadas na primeira linha do arquivo; e 
+- sem nomes identificando linhas (por _default_, a opção _row.names=NA_).
 
 ## Referências
 

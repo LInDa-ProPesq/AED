@@ -1,7 +1,7 @@
 ---
 title: "Análise de Dados com o Software R: Métodos Estatísticos, Computacionais e Econométricos"
 author: "João Pedro Albino"
-date: "16 de outubro de 2018"
+date: "24 de outubro de 2018"
 output:
   ioslides_presentation: default
 ---
@@ -703,10 +703,10 @@ sort(table(livvec), decreasing = TRUE)
 ## Concluindo
 ### Salvando o data.frame modificado em arquivo no seu computador
 ``` {r, finalizando, echo=TRUE}
-#diretorio <-
-#"C:/OneDrive/Projetos 2018/Ciencia de Dados/Introducao a Ciencia de Dados/Projetos/Analise de Dados com o Software R/dados/ODB2018.csv" ## Em Windows
-diretorio = "~/Downloads/AED/dados/ODB2018.csv" ## Em MacOsX
-write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) # salvando...
+diretorio <-"../dados/ODB2018.csv" ## Em Windows
+#diretorio = "~/Downloads/AED/dados/ODB2018.csv" ## Em MacOsX
+# Salvando...
+write.table(df, file= diretorio, sep = ";", dec = ",",row.names = FALSE) 
 ```
 
 ## Concluindo
